@@ -9,16 +9,19 @@ logger = logging.getLogger(__name__)
 
 
 def get_first_name(full_name: str) -> str:
+    """Retorna o primeiro nome de uma string de nome completo."""
     parts = full_name.strip().split()
     return parts[0] if parts else ""
 
 
 def is_valid_phone(phone: str) -> bool:
+    """Valida se o número de telefone contém pelo menos 10 dígitos."""
     digits = "".join(char for char in phone if char.isdigit())
     return len(digits) >= 10
 
 
 def main():
+    """Busca contatos no Supabase e envia mensagens via ZAPI."""
     logger.info("Iniciando envio de mensagens...")
 
     contacts = get_contacts(limit=3)

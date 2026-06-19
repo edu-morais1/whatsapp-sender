@@ -8,6 +8,7 @@ ZAPI_BASE_URL = "https://api.z-api.io/instances/{instance_id}/token/{token}/send
 
 
 def send_message(phone: str, message: str) -> bool:
+    """Envia uma mensagem de texto via Z-API. Retorna True se bem sucedido."""
     Config.validate()
 
     url = ZAPI_BASE_URL.format(

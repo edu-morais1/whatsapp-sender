@@ -11,6 +11,7 @@ def get_supabase_client() -> Client:
 
 
 def get_contacts(limit: int = 3) -> list[dict]:
+    """Busca contatos no Supabase e retorna uma lista de dicionários com nome e telefone."""
     try:
         client = get_supabase_client()
         response = (
